@@ -78,24 +78,10 @@ affinity: {}
 
 branch: "112_more_validators"
 gitrepo: "https://github.com/Sifchain/sifnode.git"
-mount: "/sifnode"
-
-pvcs:
-   claim0: 5Gi
-   claim1: 1Gi
-   claim2: 2Gi
-   claim3: 1Gi
-   claim4: 1Gi
-
-vm:
-   claim0: /sifnode
-   claim1: /configs
-   claim2: /logs
-   claim3: /gobin
-   claim4: /gocache
+mount: "/temp/sifnode"
 
 service:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - 26657
     - 8646
@@ -119,16 +105,28 @@ containers:
 
 containercommon:
   image: ghcr.io/sifchain/sifnode/sifdocker:latest
-  workingDir: /sifnode/test/integration
+  workingDir: /sifnode/sifnode/test/integration
 
 volumeMounts:
   - mountPath: /sifnode
-    name: claim0
+    name: sifnode
   - mountPath: /configs
-    name: claim1
+    name: configs
   - mountPath: /logs
-    name: claim2
+    name: logs
   - mountPath: /gobin
-    name: claim3
+    name: gobin
   - mountPath: /gocache
-    name: claim4
+    name: gocache
+
+volumes:
+  - name: sifnode
+    emptyDir: {}
+  - name: configs
+    emptyDir: {}
+  - name: logs
+    emptyDir: {}
+  - name: gobin
+    emptyDir: {}
+  - name: gocache
+    emptyDir: {}

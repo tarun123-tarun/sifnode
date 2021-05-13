@@ -21,12 +21,6 @@ spec:
       labels:
         {{- include "siftest.selectorLabels" . | nindent 8 }}
     spec:
-      volumes:
-      {{- range $key, $value := .Values.pvcs}}
-      - name: {{ $key }}
-        persistentVolumeClaim:
-          claimName: {{ $key }}
-      {{ end }}
       initContainers:
       - name: git-cloner
         image: alpine/git
@@ -38,8 +32,8 @@ spec:
             - {{ .Values.gitrepo }}
             - {{ .Values.mount }}
         volumeMounts:
-        - mountPath: /sifnode
-          name: claim0
+        - mountPath: /temp
+          name: sifnode
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -52,9 +46,14 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: /sifnode
+          name: sifnode
       {{- range .Values.containers }}
       - {{ . | toYaml | nindent 8 | trim }}
         {{- $dot.Values.containercommon | toYaml | nindent 8 }}
         volumeMounts:
         {{- $dot.Values.volumeMounts | toYaml | nindent 8 }}
       {{- end }}
+      volumes:
+      {{- .Values.volumes | toYaml | nindent 8 }}
