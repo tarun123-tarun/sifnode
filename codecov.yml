@@ -11,7 +11,7 @@ coverage:
   status:
     # Learn more at https://docs.codecov.io/docs/commit-status
     default_rules:
-      flag_coverage_not_uploaded_behavior: exclude # don't send status checks that don't have flag coverage uploaded
+      flag_coverage_not_uploaded_behavior: exclude # don&#39;t send status checks that don&#39;t have flag coverage uploaded
     patch: off
     project:
       default:
@@ -23,39 +23,39 @@ coverage:
         flags:
           - server
         paths:
-          - "x/"
-          - "!x/**/client/" # ignore client package
+          - &quot;x/&quot;
+          - &quot;!x/**/client/&quot; # ignore client package
       ui:
         target: 70%
         flags:
           - ui
         paths:
-          - "ui/core/src"
+          - &quot;ui/core/src&quot;
     changes: false
 
 comment:
-  layout: "reach, diff, flags, files"
+  layout: &quot;reach, diff, flags, files&quot;
   behavior: default # update if exists else create new
   require_changes: true
 
 flags:
   server:
     paths:
-      - "x/"
-      - "!x/**/client/" # ignore client package
+      - &quot;x/&quot;
+      - &quot;!x/**/client/&quot; # ignore client package
     carryforward: true
   ui:
     paths:
-      - "ui/core/src"
+      - &quot;ui/core/src&quot;
     carryforward: true
 
 ignore:
-  - "docs"
-  - "*.md"
-  - "*.rst"
-  - "**/test_common.go"
-  - "**/test_helpers.go"
-  - "**/module.go"
-  - "**/genesis.go"
-  - "scripts/"
-  - "contrib"
+  - &quot;docs&quot;
+  - &quot;*.md&quot;
+  - &quot;*.rst&quot;
+  - &quot;**/test_common.go&quot;
+  - &quot;**/test_helpers.go&quot;
+  - &quot;**/module.go&quot;
+  - &quot;**/genesis.go&quot;
+  - &quot;scripts/&quot;
+  - &quot;contrib&quot;
