@@ -1,5 +1,5 @@
 # v0.8.4
-> May 13, 2021
+&gt; May 13, 2021
 
 ## 🐛 Bug Fixes
 
@@ -8,7 +8,7 @@
 ----
 
 # v0.8.2
-> April 29, 2021
+&gt; April 29, 2021
 
 ## 🛠 Improvements
 
@@ -17,7 +17,7 @@
 ----
 
 # v0.8.1
-> April 28, 2021
+&gt; April 28, 2021
 
 ## ❓ Miscellaneous
 
@@ -26,7 +26,7 @@
 ----
 
 # v0.8.0
-> April 27, 2021
+&gt; April 27, 2021
 
 ## ⭐ Features
 
@@ -37,7 +37,7 @@
 
 - [UI] Added logic for when clicking on max button in ROWAN to take into consideration necessary gas fees.
 - [UI] In swap confirmation screen, built in cleaner UX logic around the way we display numbers. 
-- [UI] Included logic in the token list pop-ups when doing a swap or liquidity add for how we sort the displayed tokens. We are also now calling in user's balances directly in this pop-up as well for easy viewing.
+- [UI] Included logic in the token list pop-ups when doing a swap or liquidity add for how we sort the displayed tokens. We are also now calling in user&#39;s balances directly in this pop-up as well for easy viewing.
 - [Peggy] Add retry logic when infura gives us a not found error. Add additional retry logic to try to retrieve the tx if it cannot be found on the first query.
 - [Sifnode] Ability to propose and vote on new jailing parameters.
 - [ChainOps] MongoDb resource limit increases.
@@ -45,7 +45,7 @@
 ## 🐛 Bug Fixes
 
 - [UI] State loader for dispensation.
-- [UI] Remove the "select all" functionality when clicking in a field.
+- [UI] Remove the &quot;select all&quot; functionality when clicking in a field.
 - [UI] Token with zero balances would sometimes disappear from the swap options.
 
 ## ❓ Miscellaneous
