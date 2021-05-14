@@ -1,8 +1,8 @@
 CHAINNET?=testnet # Options; localnet, testnet, chaosnet ,mainnet
 BINARY?=sifnoded
 GOBIN?=${GOPATH}/bin
-NOW=$(shell date +'%Y-%m-%d_%T')
-COMMIT:=$(shell git log -1 --format='%H')
+NOW=$(shell date +&#39;%Y-%m-%d_%T&#39;)
+COMMIT:=$(shell git log -1 --format=&#39;%H&#39;)
 VERSION:=$(shell cat version)
 
 ifeq (mainnet,${CHAINNET})
@@ -21,9 +21,9 @@ ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=sifchain \
 		  -X github.com/cosmos/cosmos-sdk/version.ClientName=sifnodecli \
 		  -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 		  -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
-		  -X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)"
+		  -X &quot;github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)&quot;
 
-BUILD_FLAGS := -ldflags '$(ldflags)' -tags ${BUILD_TAGS} -a
+BUILD_FLAGS := -ldflags &#39;$(ldflags)&#39; -tags ${BUILD_TAGS} -a
 
 BINARIES=./cmd/sifnodecli ./cmd/sifnoded ./cmd/sifgen ./cmd/sifcrg ./cmd/ebrelayer
 
@@ -38,7 +38,7 @@ init:
 	./scripts/init.sh
 
 start:
-	sifnodecli rest-server & sifnoded start
+	sifnodecli rest-server &amp; sifnoded start
 
 lint-pre:
 	@test -z $(gofmt -l .)
@@ -81,11 +81,10 @@ sh-image: build-image
 	docker run -it sifchain/$(BINARY):$(IMAGE_TAG) sh
 
 init-run:
-	./scripts/init.sh && ./scripts/run.sh
+	./scripts/init.sh &amp;&amp; ./scripts/run.sh
 
 init-run-noInstall:
-	./scripts/init-noInstall.sh && ./scripts/run.sh
+	./scripts/init-noInstall.sh &amp;&amp; ./scripts/run.sh
 
 rollback:
 	./scripts/rollback.sh
-
