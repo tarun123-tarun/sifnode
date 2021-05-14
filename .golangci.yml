@@ -34,16 +34,16 @@ linters:
 
 issues:
   exclude-rules:
-    - text: "Use of weak random number generator"
+    - text: &quot;Use of weak random number generator&quot;
       linters:
         - gosec
-    - text: "comment on exported var"
+    - text: &quot;comment on exported var&quot;
       linters:
         - golint
-    - text: "don't use an underscore in package name"
+    - text: &quot;don&#39;t use an underscore in package name&quot;
       linters:
         - golint
-    - text: "ST1003:"
+    - text: &quot;ST1003:&quot;
       linters:
         - stylecheck
 
