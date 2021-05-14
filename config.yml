@@ -1,10 +1,9 @@
 version: 1
 accounts:
   - name: user1
-    coins: ["1000token", "10000000000stake" ,"1000000000rowan" ,"1000000000cdash" ,"1000000000ceth" ]
+    coins: [&quot;1000token&quot;, &quot;10000000000stake&quot; ,&quot;1000000000rowan&quot; ,&quot;1000000000cdash&quot; ,&quot;1000000000ceth&quot; ]
   - name: user2
-    coins: ["1000token", "100000000stake" ,"1000000000rowan" ,"1000000000cdash","1000000000ceth"]
+    coins: [&quot;1000token&quot;, &quot;100000000stake&quot; ,&quot;1000000000rowan&quot; ,&quot;1000000000cdash&quot;,&quot;1000000000ceth&quot;]
 validator:
   name: user1
-  staked: "100000000stake"
-
+  staked: &quot;100000000stake&quot;
